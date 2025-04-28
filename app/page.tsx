@@ -1,100 +1,107 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gradient-to-b from-white to-gray-100 min-h-screen">
+      {/* Header */}
+      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
+        <div className="flex items-center gap-4">
+          <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
+          <span className="text-xl font-bold text-violet-600">
+            AI Content Generator
+          </span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/(auth)/sign-in"  // Link to sign-in/signup page
+          className="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 6.75a3 3 0 11-6 0 3 3 0 016 0zM4.5 18a6 6 0 1115 0H4.5z"
+            />
+          </svg>
+          <span className="text-sm font-medium">Get Started</span>
+        </Link>
+      </header>
+
+      {/* Hero Section */}
+      <section className="text-center bg-gradient-to-r from-violet-100 via-white to-indigo-100 py-20 relative">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-800 leading-snug">
+            Revolutionize Your Content Creation with AI
+          </h1>
+          <p className="mt-4 text-gray-600 text-lg">
+            Our AI-powered app delivers engaging, high-quality text in seconds.
+          </p>
+          <Link
+            href="/(auth)/sign-in"  // Redirect to sign-in/signup page
+            className="mt-6 inline-block bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-3 rounded-full text-lg shadow hover:opacity-90 transition"
+          >
+            Get Started
+          </Link>
+        </div>
+        <div className="absolute inset-0 pointer-events-none">
+          <svg
+            className="w-full h-full opacity-10"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+          >
+            <path
+              fill="#7C3AED"
+              d="M0,224L48,192C96,160,192,96,288,90.7C384,85,480,139,576,138.7C672,139,768,85,864,69.3C960,53,1056,75,1152,90.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[{
+              title: "25+ Templates",
+              description: "Responsive, and mobile-first project on the web",
+            },
+            {
+              title: "Customizable",
+              description: "Components are easily customized and extendable",
+            },
+            {
+              title: "Free to Use",
+              description: "Every component and plugin is well documented",
+            },
+            {
+              title: "24/7 Support",
+              description: "Contact us 24 hours a day, 7 days a week",
+            },
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition"
+            >
+              <h3 className="text-lg font-bold text-gray-800">
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 bg-gray-100">
+        <p className="text-gray-600 text-sm">
+          © {new Date().getFullYear()} AI Content Generator. All Rights
+          Reserved | Purushottam & Shashank
+        </p>
       </footer>
     </div>
   );
