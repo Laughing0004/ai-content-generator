@@ -1,6 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function LandingPage() {
+  const router = useRouter();
+
   return (
     <div className="bg-gradient-to-b from-white to-gray-100 min-h-screen">
       {/* Header */}
@@ -11,26 +17,36 @@ export default function LandingPage() {
             AI Content Generator
           </span>
         </div>
-        <Link
-          href="/(auth)/sign-in"  // Link to sign-in/signup page
-          className="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
+        <SignedOut>
+          <Link
+            href="/sign-in"
+            className="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 6.75a3 3 0 11-6 0 3 3 0 016 0zM4.5 18a6 6 0 1115 0H4.5z"
-            />
-          </svg>
-          <span className="text-sm font-medium">Get Started</span>
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6.75a3 3 0 11-6 0 3 3 0 016 0zM4.5 18a6 6 0 1115 0H4.5z"
+              />
+            </svg>
+            <span className="text-sm font-medium">Get Started</span>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="text-sm font-medium text-gray-600 hover:text-violet-600 transition"
+          >
+            Go to Dashboard
+          </button>
+        </SignedIn>
       </header>
 
       {/* Hero Section */}
@@ -42,12 +58,26 @@ export default function LandingPage() {
           <p className="mt-4 text-gray-600 text-lg">
             Our AI-powered app delivers engaging, high-quality text in seconds.
           </p>
-          <Link
-            href="/(auth)/sign-in"  // Redirect to sign-in/signup page
-            className="mt-6 inline-block bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-3 rounded-full text-lg shadow hover:opacity-90 transition"
-          >
-            Get Started
-          </Link>
+
+          {/* Conditional Button */}
+          <div className="mt-6">
+            <SignedOut>
+              <Link
+                href="/sign-in"
+                className="inline-block bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-3 rounded-full text-lg shadow hover:opacity-90 transition"
+              >
+                Get Started
+              </Link>
+            </SignedOut>
+          <SignedIn>
+              <button
+                onClick={() => router.push("/dashboard")}
+                className="inline-block bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-3 rounded-full text-lg shadow hover:opacity-90 transition"
+              >
+                Go to Dashboard
+              </button>
+            </SignedIn>
+          </div>
         </div>
         <div className="absolute inset-0 pointer-events-none">
           <svg
@@ -66,7 +96,8 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-12">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[{
+          {[
+            {
               title: "25+ Templates",
               description: "Responsive, and mobile-first project on the web",
             },
@@ -99,8 +130,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="text-center py-6 bg-gray-100">
         <p className="text-gray-600 text-sm">
-          © {new Date().getFullYear()} AI Content Generator. All Rights
-          Reserved | Purushottam & Shashank
+          © {new Date().getFullYear()} AI Content Generator. All Rights Reserved | Purushottam & Shashank
         </p>
       </footer>
     </div>
