@@ -54,7 +54,10 @@ A modern, responsive AI-powered web application that enables users to generate h
 
 | Landing Page | Sign-In Page | Dashboard |
 |--------------|--------------|-----------|
-| ![Landing](./public/screenshots/landing.png) | ![Sign-in](./public/screenshots/signin.png) | ![Dashboard](./public/screenshots/dashboard.png) |
+| ![Landing](![image](https://github.com/user-attachments/assets/97a0811e-4f45-48bf-9716-1e6579740d12)
+) | ![Sign-in](![image](https://github.com/user-attachments/assets/6128ae73-fdbf-41af-9505-24b97587c2bb)
+) | ![Dashboard](![image](https://github.com/user-attachments/assets/48731560-b45a-4d02-adfc-ddf5adad66b7)
+) |
 
 ---
 
@@ -171,8 +174,8 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📬 Contact
 
 **Developer:** PK (Purushottam Kumar)  
-📧 Email: your-email@example.com  
-🔗 Portfolio: [your-portfolio-link.com](https://your-portfolio-link.com)
+📧 Email: your-labdesign0004@gmail.com 
+🔗 Portfolio: [your-portfolio-link.com](https://laughing0004.github.io/My-Portfolio/)
 
 ---
 
