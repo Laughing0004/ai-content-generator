@@ -61,19 +61,22 @@ A modern, responsive AI-powered web application that enables users to generate h
 \`\`\`
 app/
 ├── (auth)/
-│   ├── sign-in/[[...sign-in]]/page.tsx
-│   └── sign-up/[[...sign-up]]/page.tsx
+│   ├── sign-in/
+│   │   └── [[...sign-in]]/page.tsx
+│   └── sign-up/
+│       └── [[...sign-up]]/page.tsx
 ├── dashboard/
 │   └── page.tsx
 ├── components/
 │   └── ui/...
 ├── layout.tsx
-├── page.tsx (Landing Page)
+├── page.tsx  # Landing Page
 middleware.ts
 tailwind.config.ts
 postcss.config.mjs
 tsconfig.json
 .env.local
+
 \`\`\`
 
 ---
