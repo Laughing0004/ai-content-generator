@@ -54,11 +54,7 @@ A modern, responsive AI-powered web application that enables users to generate h
 
 | Landing Page | Sign-In Page | Dashboard |
 |--------------|--------------|-----------|
-(![image](https://github.com/user-attachments/assets/97a0811e-4f45-48bf-9716-1e6579740d12)
-(![image](https://github.com/user-attachments/assets/6128ae73-fdbf-41af-9505-24b97587c2bb)
-(![image](https://github.com/user-attachments/assets/48731560-b45a-4d02-adfc-ddf5adad66b7)
-
----
+| ![Landing](https://github.com/user-attachments/assets/97a0811e-4f45-48bf-9716-1e6579740d12) | ![Sign-In](https://github.com/user-attachments/assets/6128ae73-fdbf-41af-9505-24b97587c2bb) | ![Dashboard](https://github.com/user-attachments/assets/48731560-b45a-4d02-adfc-ddf5adad66b7) |
 
 ## 📁 Folder Structure (Simplified)
 
